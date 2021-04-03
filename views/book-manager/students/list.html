@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <link rel="stylesheet" href="../../../public/bootstrap & jquery/animation/animate.min.css">
+    <link rel="stylesheet" href="../../../public/bootstrap & jquery/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../public/my_css/main.css">
+    <style>
+        td{text-align: center !important;}
+        th{padding:2px !important;text-align: center; }
+        
+    </style>
+</head>
+<body class="main-bg">
+
+ <!--<p class="bg-primary">Student list.html</p>-->
+ <nav class="fixed-top d-flex library-title justify-content-between">
+   <!--scroll indicator-->  
+   <div class="progress-bar fixed-top" style="height:2px" role="progressbar" id="scroll_indicator"></div>
+  
+  <!--scroll indicator-->  
+ <a class="nav-link library-title" href="../first-page.html">Home</a></p>
+ 
+<button class="btn btn-sm my-1 mr-1" data-toggle="modal" data-target="#add-student" id="add-new-student">Add New</button>
+ </nav>
+<!--backend message section-->
+
+<section id="backend-messages" class="mt-5 pt-1">
+<!--success-->
+  <div class="alert alert-success alert-dismissible fade show p-1" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <p class="text-center p-0">Success message</p>
+  </div><!--end of success-->
+<!--error section-->
+<div class="alert alert-danger mt-n1 alert-dismissible fade show p-1" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <p class="text-center pt-1">Failure message</p>
+</div>
+<!--end of erro section-->
+</section>
+<!--backend message section-->
+
+
+<!--student list-->
+<section id="student list">
+    
+<!--title-->   <div class="mt-1 pt-1 title-gn-1">
+<p class="text-center h5">All students registered :</p>
+<p class="mx-auto mt-n1" id="underline"></p>
+</div><!--title-->
+
+<!--table of the students-->
+<div class="container-fluid">
+<!--search bar top-->
+<div class="row">
+    <div class="col-sm-8 col-md-6 mx-auto">
+      <div class="input-group d-flex justify-content-center">
+  <input type="text" id="student-list" placeholder="By names or class or year" onkeyup="myFunction()" class="border-info form-control bg-search"> 
+      <div class="input-group-append">
+        <p class="input-group-text border-info bg-search">Search</p>
+      </div>        
+      </div>
+    
+    </div>
+</div>
+<!--search bar end-->
+<!--main body fo table-->
+<div class="row mt-2">
+    <div class="col-md-10 mx-auto">
+        <table class="td-colored table table-hover w-100 table-responsive table-bordered" id="table1" >
+           <thead class="thead-dark">
+             <tr> <th class="d-none">Student-Id</th>
+                <th style="width:20%">First-name</th>
+                <th style="width:18%">Last-name</th>
+                <th style="width:15%">Class</th>
+                <th style="width:12%">Year</th>
+                <th style="width:3%">Sex</th>
+                
+                <th style="width:10%">Action</th>
+                <th style="width:10%">Action</th>
+                <th style="width:10%">Action</th>
+              <!--  <th style="width:10%">Action</th>-->
+             </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="d-none">Id</td>
+                <td class="p-1" >Irambona</td>
+                <td class="p-1" >Thierry</td>
+                <td class="p-1" >s5_mcb_a</td>
+                <td class="p-1" >2003</td>
+                <td class="p-1" >M</td>
+                <td class="p-1 mx-auto" ><a class="w-100 btn btn-sm btn-info" href="./edit.html" role="button">Edit</a> </td>
+                <td class="p-1" ><a data-toggle="modal" data-target="#modal-delete" class="w-100 btn btn-sm btn-info" role="button">Delete</a></td>
+               <td class="p-1" ><a href="#" class="w-100 btn btn-sm btn-info" role="button">Lend</a></td>
+              
+
+              </tr>
+              <tr>
+                <td class="d-none">ID</td>
+                <td class="p-1" >Ndizeye</td>
+                <td class="p-1" >Blaise</td>
+                <td class="p-1" >S5_Pcb_b</td>
+                <td class="p-1" >2005</td>
+                <td class="p-1" >F</td>
+                <td class="p-1 mx-auto" ><a class="w-100 btn btn-sm btn-info" href="./edit.html" role="button">Edit</a> </td>
+                <td class="p-1" ><a data-toggle="modal" data-target="#modal-delete" class="w-100 btn btn-sm btn-info" role="button">Delete</a></td>
+               <td class="p-1" ><a href="../students/lend.html" class="w-100 btn btn-sm btn-info" role="button">Lend</a></td>
+              
+              </tr>
+              
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+</div><!--end of the table -->
+
+</section> 
+<!--end of the student section-->
+
+<!--are you sure to delete  modal-->
+<div class="modal" tabindex="-1" role="dialog" id="modal-delete">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header d-flex justify-content-around">
+      <center class="modal-title text-center"><b>Are you sure to delete student ?</b></center>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body d-flex justify-content-between">
+        <a href="#" class="btn btn-md btn-danger">Ok</a>
+        <button class="btn btn-md btn-success" data-dismiss="modal">Cancel</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+<!--end of are you sure to delete  modal-->
+
+<!--add new student modal--> 
+<div class="modal fade bd-example-modal-xl" id="add-student" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content bg-modal">
+      <!--title-->
+      
+  <span class="text-center text-success h5 float-right">Fill the following to add new student:</span>
+      <!--title-->
+      <!--message from front end-->
+  
+        <p class="text-white text-center" id="valid-msg"></p>
+      <!--message from front end-->
+<!--form-->
+<form method="POST" id="form-add-student">
+  <div class="row">
+    <div class="col-sm-5 m-1 mx-auto">
+      <input type="text" class="form-control" onkeyup="student_fname()" id="std-f-name" placeholder="First name">
+    </div>
+    <div class="col-sm-5 m-1 mx-auto">
+      <input type="text" class="form-control" onkeyup="student_lname()" id="std-l-name" placeholder="Last name">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-5 m-1 mx-auto">
+      <input type="text" id="std-class" onkeyup="student_class()" class="form-control autocomplete" placeholder="Class">
+    </div>
+    <div class="col-sm-5 m-1 mx-auto">
+      <input type="number" id="std-dob" max="3000" min="1990" onkeyup="student_dob()" class="form-control" placeholder="Birth Year">
+    </div>
+    <div class="col-sm-5 m-1 mx-auto">
+     <select class="custom-select" id="std-gender" onclick="student_gender()">
+       <option value="" selected>Gender</option>
+       <option value="m">M</option>
+       <option value="f">F</option>
+     </select>
+    </div>
+  </div>
+  <div class="d-flex justify-content-around ">
+<button type="submit" class="btn btn-md btn-success py-2 my-2 px-5">Add</button>
+<button type="button" data-dismiss="modal" class="btn btn-md btn-danger py-2 my-2 px-5">cancel</button>
+</div>
+</form>
+
+<!--form-->
+
+
+    </div>
+  </div>
+</div>
+<!--end of add new student modal-->
+
+
+
+<!--jquery--> 
+<script src="../../../public/bootstrap & jquery/js/jquery.1.js"></script>
+<!--bootstrap-->
+<script src="../../../public/bootstrap & jquery/js/bootstrap.bundle.min.js"></script>
+<!--my own javascript-->
+<script src="../../../public/my_js.js/main_js.js"></script>
+<!--student class auto complete-->
+<script src="../../../public/my_js.js/auto-class.js"></script>
+</body>
+</html>

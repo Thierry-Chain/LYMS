@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <link rel="stylesheet" href="../../../public/bootstrap & jquery/animation/animate.min.css">
+    <link rel="stylesheet" href="../../../public/bootstrap & jquery/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../public/my_css/main.css">
+    <style>
+        td{text-align: center !important;}
+        th{padding:2px !important;text-align: center; }
+        
+    </style>
+</head>
+<body class="main-bg">
+ <!--<p class="bg-primary">Student borrowers</p>-->
+ <nav class="mb-5 fixed-top d-flex library-title justify-content-around">
+    <!--scroll indicator-->  
+    <div class="progress-bar fixed-top" style="height:3px" role="progressbar" id="scroll_indicator"></div>
+   
+   <!--scroll indicator-->  
+  <a class="nav-link library-title" href="../first-page.html">Home</a></p>
+  
+ <p class="nav align-items-center">Borrowers</p>
+  </nav><br>
+  <!--backend messages-->
+<section class="mt-5" id="backend-messages">
+  <!--success message-->
+  <div class="alert alert-success alert-dismissible fade show" id="msg_1" role="alert">
+    <p class="text-center p-0 m-0">Successful messages </p>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true" id="hide_msg_1">&times;</span>
+    </button>
+  </div>
+  <!--end of success message-->
+
+  <!--failure mesaage-->
+  <div class="alert alert-danger alert-dismissible fade show" id="msg_2" role="alert">
+    <p class="text-center p-0 m-0">Failure messages </p>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true" id="hide_msg_2">&times;</span>
+    </button>
+  </div>
+  <!--end of failure mesaage-->
+</section>
+<!--backend messages-->
+<section class="mtd-5">
+    <!---title-->
+    <p class="text-center title-gn-1 h5 mb-2">These have borrowed book(s) :</p>
+    <p id="underline" class="d-flex align-items-center justify-content-center mx-auto my-2 bg-light-dark"></p>
+    <!--title-->
+
+<!--table-->
+<div class="container-fluid">
+
+<!--search bar top-->
+<div class="row">
+  <div class="col-sm-8 col-md-6 mx-auto">
+    <div class="input-group d-flex justify-content-center">
+<input type="text" id="student-list" placeholder="By names or class or year" onkeyup="myFunction()" class="border-info form-control bg-search"> 
+    <div class="input-group-append">
+      <p class="input-group-text border-info bg-search">Search</p>
+    </div>        
+    </div>
+  
+  </div>
+</div>
+<!--search bar end-->  
+
+<div class="row mt-2">
+    <div class="col-md-11 mx-auto">
+        <table class="td-colored mx-auto table table-hover table-responsive table-bordered" id="table1" >
+           <thead class="thead-dark">
+             <tr> <th class="d-none">Student-Id</th>
+                <th>First-name</th>
+                <th>Last-name</th>
+                <th>Class</th>
+                <th>Gender</th>
+                <th>Year</th>
+                <!--not displayed-->
+                <th>Book1</th>
+                <th>Id1</th>
+                <th>Date 1</th>
+                <!--book-2-->
+                <th>Book2</th>
+                <th>Id2</th>
+                <th>Date2</th>
+                <!--end of un displayed data-->
+                <th>Borrowed</th>
+                <th>Action</th>
+             </tr>
+            </thead>
+            <tbody>
+<tr>
+                <td class="d-none">Id</td>
+ <td class="p-1 std-fname" id="std-fname">Sekamana</td> <td class="p-1 std-lname" id="std-lname">Nyirabititaweho</td>  
+ <td class="p-1">S6_Mpc_A</td> 
+ <td class="p-1">M</td>
+ <td class="p-1">2005</td>
+ <!--undisplayed-->
+ <td class="p-1">Book 1 two name</td>
+ <td class="p-1">Id of two book1</td>
+ <td class="p-1"> Date two of book 1</td>
+
+ <td class="p-1">Book tow 2 name</td>
+ <td class="p-1">Id of two book2</td>
+ <td class="p-1"> Date two of book 2</td>
+<!--undisplayed-->
+
+ <!--end of all books-->
+ <!--<td> <a href="#" class="btn btn-sm bg-primary">Return</a> </td>-->
+ <td class="p-1">
+  <button class="btn p-1 btn-sm btn-info w-100 find-books" data-toggle="modal" data-target="#find-books" id="book-finder">Checkout</button>
+ </td>
+ <td class="p-1"><a href="#" class="px-1 btn btn-info btn-sm w-100">Return</a>  </td>
+ 
+</tr>
+
+         
+              
+            
+            </tbody>
+          </table></div>
+    </div>
+</div>
+<!--end of the table-->
+</section>  
+
+<!--find bboks section-->
+<div class="modal fade bd-example-modal-xl" id="find-books" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col">
+              <p class="text-center title-gn h4" id="student-name"></p>
+              <p class="text-center h5 p-1">Borrowed</p>
+              <div id="underline" class="w-50 p-1 mx-auto mt-n1"></div>
+            </div></div>
+            
+          
+        <div class="row mt-3">
+          <div class="col-lg-5 mx-auto bg-secondary">
+            <p class="p-0 text-center">Book 1</p>
+            <p>Name: <span id="final-book1"></span></p>
+            <p>Id: <span id="final-id1"></span></p>
+            <p>Date: <span id="final-date1"></span></p>
+          </div>
+          <div class="col-lg-5 mx-auto bg-info mt-2">
+            <p class="p-0 text-center">Book 2</p> 
+            <p>Name: <span id="final-book2"></span></p>
+            <p>Id: <span id="final-id2"></span></p>
+            <p>Date: <span id="final-date2"></span></p>
+          </div>
+        </div>
+        <div class="mt-2 container">
+        <button class="mx-auto text-warning btn btn-md d-flex bg-success" data-dismiss="modal">Cancel</button>
+    </div>
+  </div>
+</div>
+<!--find bboks section-->
+<!--jquery--> 
+<script src="../../../public/bootstrap & jquery/js/jquery.1.js"></script>
+<!--bootstrap-->
+<script src="../../../public/bootstrap & jquery/js/bootstrap.bundle.min.js"></script>
+<!--my own javascript-->
+<script src="../../../public/my_js.js/main_js.js"></script>
+
+</body>
+</html>

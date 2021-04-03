@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <link rel="stylesheet" href="../../../public/bootstrap & jquery/animation/animate.min.css">
+    <link rel="stylesheet" href="../../../public/bootstrap & jquery/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../public/my_css/main.css">
+</head>
+<body class="main-bg">
+ <p class="bg-primary">Return One Book Student</p>
+ <nav class="fixed-top d-flex library-title justify-content-between">
+    <!--scroll indicator-->  
+    <div class="progress-bar fixed-top" style="height:2px" role="progressbar" id="scroll_indicator"></div>
+   
+   <!--scroll indicator-->  
+  <a class="nav-link library-title" href="../first-page.html">Home</a></p>
+ <p class="my-auto mx-2">Return<span class="d-none d-sm-inline"> 1 book only</span></p>
+  </nav>
+
+  <section id="return one book" class="mt-5 pt-1">
+
+    <!--student informations-->
+    <div class="container mt-2">
+        <div class="row d-flex" style="color: rgb(95, 180, 180);">
+    <div class="col-md-6 d-flex my-1 ml-auto">
+     <!--title-->
+     <div class="text-center m-auto">
+        <div class="h4 title-gn">Return One Book only to student</div>
+        <div id="underline" class="p-1 mb-1 mx-auto"></div>
+        </div> <!--end of the title-->       
+            </div>
+    
+            <div class="col-md-6 mr-auto custom-font">
+    <p>First name: <span id="fname">Irambnoan</span> </p>
+    <p>Last name: <span id="lname">Thierry</span> </p>
+    <p>Class: <span id="classe">s5 mpc</span> </p>
+    <p>Year: <span id="year">2020 </span></p>
+    <p>Sex: <span id="sex">male</span> </p>
+    
+            </div></div>
+    <p class="text-center my-1 h4 title-gn"><u>Book informations</u></p>    
+      <form method="POST" action="#" id="return_1_bk">
+    <div class="row">        
+     <div class="col-md-5">
+     <input type="text" id="book_name" class="form-control bg-student my-3" placeholder="Book name" data-toggle="tooltip" data-placement="top" title="Book 1 name" readonly>
+      </div>
+      <div class="col-md-5 ml-auto">
+      <input type="text" id="book_id" class="form-control bg-student my-3" placeholder="Book id" data-toggle="tooltip" data-placement="top" title="Book 1 id" readonly>
+     </div></div>                                                    
+                            
+          
+           <div class="row">
+          <div class="col-md-5">
+            <input type="text" id="book_type" class="form-control bg-student my-2" placeholder="Book type" data-toggle="tooltip" data-placement="top" title="Book type" readonly>
+             </div>
+             <div class="col-md-5 ml-auto">
+                <input type="text" id="book-1-lended" class="form-control bg-student my-2" placeholder="Date of lend" data-toggle="tooltip" data-placement="top" title="Date book 1 was lended" readonly>
+                 </div>
+             </div> 
+             
+            <div class="d-flex mt-2">
+              <button class="m-auto btn btn-md btn-success my-3" id="lend_1_book" type="submit">Approve Return </button>
+            </div>                       
+                  </div>       
+          </form>   
+        </div>
+    
+    <!--validation message section-->
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Error description</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+           <p id="on_books-message" class="text-center"></p>
+          </div>
+          <div class="modal-footer d-flex">
+            <button type="button" class="btn btn-success m-auto" data-dismiss="modal">Resolve</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--validation message section-->
+    
+    
+    
+    <!--student informations-->
+    </section>
+
+<!--jquery--> 
+<script src="../../../public/bootstrap & jquery/js/jquery.1.js"></script>
+<!--bootstrap-->
+<script src="../../../public/bootstrap & jquery/js/bootstrap.bundle.min.js"></script>
+<!--my own javascript-->
+<script src="../../../public/my_js.js/main_js.js"></script>
+</body>
+</html>

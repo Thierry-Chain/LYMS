@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new user</title>
+<!--bootstrap-->    
+<link rel="stylesheet" href="../../public/bootstrap & jquery/css/bootstrap.min.css">   
+<!--my css--> 
+<link rel="stylesheet" href="../../public/my_css/main.css">   
+<link rel="stylesheet" href="../../public/bootstrap & jquery/animation/animate.min.css"> 
+</head>
+<body>
+ <!--navigation bar-->
+ <nav class="mb-1 bg-dark text-white d-flex align-items-center justify-content-center fixed-top">
+<div class="container-fluid">
+   
+<p id="regist-title" class="h4 p-1 text-center text-capitalize bg-dark rounded-pill">welcome to our library</p>
+
+<!--message section-->
+<div class="container mb-1">
+  <div id="warn" class="text-center text-capitalize"></div></div>
+  <!--end of the message section-->
+
+
+</div><!--end of the title-->
+
+
+ </nav><!--end of navigation bar-->   
+
+<br>
+<section id="main" class="mt-5 animate__animated animate__zoomIn">
+
+
+<!--formm section-->
+<div class="container">
+<p class="text-center h5">Fill The Following To Add New User:
+<p class="p-1 mx-auto w-40" id="underline"></p></p>
+
+<!--form-->
+<form method="POST" action="../mm.php" onsubmit="return status0();" id="">
+    <!--namee-->
+    <div class="row">
+        <div class="col-sm-5 mx-auto">
+  <div class="form-group">
+        <label for="name">Name</label>
+        <input type="name" data-toggle="popover" data-trigger="hover|focus" title="These Are Not Allowed" data-content="Numbers,Special-Characters" data-placement="top" name="..." class="form-control" id="name" size="30" onkeyup="ok()" onfocus="hint_nm()" required>
+      </div>
+        </div>
+      </div>
+    <!--email-->
+    <div class="row">
+      <div class="col-sm-5 mx-auto">
+<div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" onkeyup="email_vali()" name="..." class="form-control" id="email" required>
+    </div>
+      </div>
+    </div>
+<!--password-->
+    <div class="row">
+      <div class="col-sm-5 mx-auto">
+<div class="form-group">
+
+      <label for="pword1">Password:</label>
+<div class="input-group">
+<input type="password" data-toggle="popover" data-trigger="hover|focus" title="It Must Have:" data-content="More Than Five(5) Characters;At Least Four(4) Numbers; One Upper Case; One Lower Case" data-placement="bottom" class="form-control" id="pword1" onfocus="hint()" onkeyup="pword_vali0()" name="..." required>
+<div class="input-group-append">
+<button class="btn border form-control border-info border-left-0" type="button" id="view-password_1" >('')</button></div>
+</div>         
+    </div>
+      </div>
+    </div>
+<!--confirm password-->
+
+<div class="row">
+    <div class="col-sm-5 mx-auto">
+<div class="form-group">
+
+    <label for="pword2">Confirm Password:</label>
+<div class="input-group">
+<input type="password" class="form-control" id="pword2" onfocus="hint()" onkeyup="pword_vali1()" name="..." required>
+<div class="input-group-append">
+<button class="btn border form-control border-info border-left-0" data-toggle="popover" data-trigger="hover|focus" title="This Must:" data-content="Match First Password" data-placement="top" type="button" id="view-password_2" >('')</button></div>
+</div>         
+  </div>
+    </div>
+  </div>
+
+
+    <p class="d-flex align-items-center justify-content-center">
+    <button type="submit" class="btn btn-outline btn-info mr-2">Register</button>
+    <a href="../index.html" type="button" class="btn btn-outline btn-danger ml-2">Cancel</a>
+  </p>
+  </form>
+  <!--statuses-->
+  <div class="row no-gutters">
+    <div class="col-sm-6">
+  <span id="hint1">
+    <ol class="list-group"> <p class="text-center" ><u>Your Password Must Have:</u></p>
+        <li class="list-group-item bg-info">More Than 5 Characters.</li>
+        <li class="list-group-item bg-info">Must Have At Least Four(4) Numbers.</li>
+        <li class="list-group-item bg-info">Must have One Upper Case Letter.</li>
+        <li class="list-group-item bg-info">Must have One Lower Case Letter.</li>
+    </ol></span>    
+    </div>
+    <div class="col-sm-6">
+<span id="hint_nm"> 
+        <ol class="list-group" > <p class=" text-center"><u>Your Name Must Contain:</u></p>
+            <li class="list-group-item bg-info">All Characters Except Numbers. </li>
+            <li class="list-group-item bg-info">All Characters Except Special-Characters. </li>
+            
+        </ol></span>
+    </div>
+  </div>
+  
+
+    
+  <!--end of status section-->
+<!--form--></div>
+<!--end of form section-->
+
+</section>
+<!--jquery-->
+<script src="../../public/bootstrap & jquery/js/jquery.1.js"></script> 
+<!--bootstrap-->
+<script src="../../public/bootstrap & jquery/js/bootstrap.bundle.min.js"></script>    
+<!-- my own javascript file -->
+<script src="../../public/my_js.js/main_js.js"></script>    
+<script src="../../public/my_js.js/validate.js"></script>
+<script src="../../public/my_js.js/submit_0.js"></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management</title>
+ <link rel="stylesheet" href="../../public/bootstrap & jquery/css/bootstrap.min.css">   
+ <link rel="stylesheet" href="../../public/bootstrap & jquery/animation/animate.min.css">
+ <link rel="stylesheet" href="../../public/my_css/main.css">
+</head>
+<body>  
+<!--navigation bar--><div class="d-flex flex-column" id="title-font">
+
+<nav class="navbar navbar-expand-md navbar-light fixed-top mb-5" id="first-page-bg" >
+  <a class="navbar-brand" href="#"><strong> <span class="spinner-grow text-success bg-success spinner-grow-sm" role="status"></span> 
+    <!--username from backend--> 
+    Username
+    <!--end of that user name-->
+   </strong> </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link nav-link-toggle Nav-toggle" href="books/all_books.html">Books</a>
+      </li>
+     
+      <!--students-->  
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Student
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item nav-link-toggle" href="./students/list.html">List</a>
+          <a class="dropdown-item nav-link-toggle" href="./students/borrowers.html">Borrowers</a>
+          <a class="dropdown-item nav-link-toggle" href="./students/records.html">Records</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item nav-link-toggle" id="direct-student" href="./students/list.html">Add <span class="badge-success badge-pill">New Student</span></a>
+        </div>
+      </li>
+  <!--students-->    
+  <!--teachers-->
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Teacher
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <a class="dropdown-item nav-link-toggle" href="./teachers/list.html">List</a>
+      <a class="dropdown-item nav-link-toggle" href="./teachers/borrowers.html">Borrowers</a>
+      <a class="dropdown-item nav-link-toggle" href="./teachers/records.html">Records</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item nav-link-toggle" href="#">Add <span class="badge-success badge-pill">New Teacher</span></a>
+    </div>
+  </li>
+  <!--teachers-->
+      <li class="nav-item  collapse_toggle">
+        <a class="nav-link" href="controls/check-up.html" tabindex="-1">Controls</a>
+      </li>
+
+      <li class="nav-item Nav-toggle">
+        <a class="nav-link nav-link-toggle collapse_toggle" href="./documentation/documentation.html">About</a>
+     </li>      
+
+      <li class="nav-item Nav-toggle">
+      <a class="nav-link nav-link-toggle collapse_toggle" role="button" tabdindex="-1" data-toggle="modal" data-target="#modal-logout">Logout</a>
+    </li>    
+    </ul>
+
+  </div>
+
+<!--scroll indicator-->  
+<div class="progress-bar fixed-top" style="height:2px" role="progressbar" id="scroll_indicator"></div>
+
+<!--scroll indicator-->    
+</nav><!--end of navigation bar-->   <br>
+
+<section id="main" class="mt-5 py-2">
+<!--title of this page-->
+<div class="container-md">
+<p class="text-center h5 my-2 pyj-3 rounded-bottom rounded-title" >Welcome To Online Library Management System</p>
+</div>
+<!--end of the title -->
+<div class="container bg-info" id="lib-functions">
+<p class="text-center" style="font-size: x-large;"><u>These are functions of library :</u> </p>
+<div class="list-group my-auto">
+<p class="bg-tranparent list-group-item p-1 text-center">Manage book(s) transfer to the students.</p>
+<p class="bg-tranparent list-group-item p-1 text-center">Manage book(s) transfer to the teachers.</p>                             <p class="bg-tranparent list-group-item p-1 text-center">Provide message to public.</p>
+<p class="bg-tranparent list-group-item p-1 text-center">Print page(s) you want.</p>
+<p class="bg-tranparent list-group-item p-1 text-center">Process students and teachers data.</p>
+</div>
+</div>
+
+
+  </section>
+</div>
+
+<!--performance section-->
+
+<section id="performance" class="my-1">
+<div class="container-fluid">
+<p class="title-gn text-center h4">Library ' s performance</p>
+<p id="underline" class="mx-auto w-40"></p>
+</div>
+
+<div class="container table-responsive">
+  <table class="table table-hover table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Total</th>
+        <th scope="col">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td>Students</td>
+        <td>100</td>
+      </tr>
+      <tr>
+        <td>Books</td>
+        <td>500</td>
+      </tr>
+      <tr>
+        <td>Book transfers</td>
+        <td>1000</td>
+      </tr>
+      <tr>
+        <td>Borrowed books</td>
+        <td>1000</td>
+      </tr>
+
+      <tr>
+        <td>Returned books</td>
+        <td>1000</td>
+      </tr>
+     
+     
+    </tbody>
+  </table>
+</div>
+
+
+</section>
+
+<!-- end of performance section-->
+
+<!--footer-->
+<section class="pb-0" style="background-color: rgb(175, 199, 221);">
+<p class="text-center p-2 mb-0"><b>Online Library Management System</b></p>
+<p class="text-center mb-0 mt-1">Copyright 2020- <span id="current_date"></span> </p>
+<center class="mt-1"> <a href="#"><button class="btn btn-sm btn-success px-3">Top</button></a></center>
+</section>
+<!--footer-->
+
+<!--are you sure to logout  modal-->
+<div class="modal" tabindex="-1" role="dialog" id="modal-logout">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header d-flex justify-content-around">
+      <center class="modal-title text-center"><b>Are you sure to logout ?</b></center>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body d-flex justify-content-between">
+        <a href="#" class="btn btn-md btn-danger">Ok</a>
+        <button class="btn btn-md btn-success" data-dismiss="modal">Cancel</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+<!--end of are you sure to logout  modal-->
+
+  <!--jquery-->  
+  <script src="../../public/bootstrap & jquery/js/jquery.1.js"></script>
+<!---bootstrap-->    
+<script src="../../public/bootstrap & jquery/js/bootstrap.bundle.min.js"></script>    
+<!-- my own js -->
+<script src="../../public/my_js.js/main_js.js"></script>
+</body>
+</html>

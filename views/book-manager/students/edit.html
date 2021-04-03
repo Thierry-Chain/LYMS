@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <link rel="stylesheet" href="../../../public/bootstrap & jquery/animation/animate.min.css">
+    <link rel="stylesheet" href="../../../public/bootstrap & jquery/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../public/my_css/main.css">
+</head>
+<style>
+    input[type=text],input[type=number],option,select{ background-color: rgb(170, 198, 221)!important ; }
+</style>
+<body class="main-bg">
+
+<!--nav bar-->
+<nav class="fixed-top d-flex library-title justify-content-around">
+    <!--scroll indicator-->  
+    <div class="progress-bar fixed-top" style="height:2px" role="progressbar" id="scroll_indicator"></div>
+   <!--scroll indicator-->  
+   <a class="nav-link library-title" href="../first-page.html">Home</a>
+   <p class="text-center nav align-items-center">Edit Student Data</p>   
+  </nav> 
+<!--nav bar-->  
+ 
+   <!--message from front end-->
+  <div class="container mt-5 fixed-top">
+<p class="text-white text-center rounded" id="update-msg"></p></div>
+<!--message from front end-->
+ 
+
+<br>
+ <div class="container-fluid mt-5">
+
+<!--form--> 
+<form method="POST" id="form-update-student">
+    <div class="row">
+      <div class="col-sm-5 m-1 mx-auto mt-3">
+        <input type="text" value="..." class="form-control" onmouseover="student_fname_updt()" onkeyup="student_fname_updt()" id="std-f-name_updt">
+      </div>
+      <div class="col-sm-5 m-1 mx-auto">
+        <input type="text" value="..." class="form-control" onkeyup="student_lname_updt()" onmouseover="student_lname_updt()" id="std-l-name_updt">
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-sm-5 m-1 mx-auto">
+        <input type="text" value="..." id="std-class_updt" onkeyup="student_class_updt()" onmouseover="student_class_updt()" class="form-control">
+      </div>
+      <div class="col-sm-5 m-1 mx-auto">
+        <input type="number" id="std-dob_updt" max="3000" min="1990" onmouseover="student_dob_updt()" onkeyup="student_dob_updt()" class="form-control">
+      </div>
+      <div class="col-sm-5 m-1 mx-auto">
+       <select class="custom-select" id="std-gender_updt" onmouseover="student_gender_updt()" onclick="student_gender_updt()">
+         <option value="" selected>Gender</option>
+         <option value="m">M</option>
+         <option value="f">F</option>
+       </select>
+      </div>
+    </div>
+    <div class="d-flex justify-content-around">
+  <button type="submit" class="btn btn-md btn-success py-2 my-2 px-5">Update</button>
+  </div>
+  </form></div>
+<!--form-->
+
+<!--jquery--> 
+<script src="../../../public/bootstrap & jquery/js/jquery.1.js"></script>
+<!--bootstrap-->
+<script src="../../../public/bootstrap & jquery/js/bootstrap.bundle.min.js"></script>
+<!--my own javascript-->
+<script src="../../../public/my_js.js/main_js.js"></script>
+</body>
+</html>
